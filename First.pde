@@ -1,6 +1,4 @@
-import processing.video.*;
-import processing.serial.*;
-Serial port;  // The serial port
+
 Capture video;
 
 color color1; 
@@ -14,7 +12,6 @@ int lol  = 0;
 ArrayList colors = new ArrayList();
 String previous = "";
 void setup() {
-  String portName = "COM3";
   String[] cameras = Capture.list();
   printArray(cameras);
   video = new Capture(this, cameras[3]);
@@ -25,8 +22,7 @@ void setup() {
   color3 = color(75,0,130);//purple
   color4 = color(255,165,0);//orange
   color5 = color(0,128,0);//pink
-  port = new Serial(this, portName, 9600);
-  port.clear();
+
 }
 void captureEvent(Capture video) {
   video.read();
@@ -183,7 +179,6 @@ void draw() {
         a = a.replace("]","");
         a = a.replace(", ","");
         println(a);
-        port.write(a);
         
       }
       colors.clear();
