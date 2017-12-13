@@ -1,14 +1,12 @@
-var capture;
-
 function setup() {
-  createCanvas(390, 240);
-  capture = createCapture(VIDEO);
-  capture.size(320, 240);
-  //capture.hide();
+  createCanvas(640, 480);
 }
 
 function draw() {
-  background(255);
-  image(capture, 0, 0, 320, 240);
-  filter('INVERT');
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
 }
