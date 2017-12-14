@@ -1,4 +1,4 @@
-import processing.video.*;
+
 Capture video;
 
 color color1; 
