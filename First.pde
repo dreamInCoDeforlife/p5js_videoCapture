@@ -13,7 +13,6 @@ ArrayList colors = new ArrayList();
 String previous = "";
 void setup() {
   String[] cameras = Capture.list();
-  printArray(cameras);
   video = new Capture(this, cameras[3]);
   video.start();
   size(800, 500);
